@@ -1,0 +1,105 @@
+{
+    "@import": "./element.php",
+    "name": "nx_joomla_urlx",
+    "title": "Joomla! URLx",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "container": false,
+    "width": 500,
+    "defaults": {
+        "urlselect": "urla",
+        "linktarget": "_blank",
+        "linkstyle": "uk-button uk-button-default"
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+
+        "urlselect": {
+            "label": "Select Source",
+            "description": "Select the Source",
+            "type": "select",
+            "options": {
+                "URL A": "urla",
+                "URL B": "urlb",
+                "URL C": "urlc"
+            }
+        },
+        "altlabel":{
+            "label": "Alternative Label",
+            "description": "If you fill in a label this one will be used",
+            "type": "text"
+        },
+        "linktarget": {
+            "label": "Target",
+            "description": "Select the Source",
+            "type": "select",
+            "options": {
+                "blank": "_blank",
+                "self": "_self",
+                "parent": "_parent",
+                "top": "_top"
+            }
+        },
+        "linkstyle": {
+            "label": "Link Style",
+            "description": "Select Link Styling",
+            "type": "select",
+            "options": {
+                "muted": "uk-link-muted",
+                "text": "uk-link-text",
+                "heading": "uk-link-heading",
+                "Button Default": "uk-button uk-button-default",
+                "Button Primary": "uk-button uk-button-primary",
+                "Button Secondary": "uk-button uk-button-secondary"
+            }
+        },
+        "button_size": {
+            "label": "Size",
+            "type": "select",
+            "default": "",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Large": "large"
+            }
+        },
+        "containerclasses":{
+            "label": "Container Classes",
+            "description": "Add classes",
+            "type": "text"
+        },
+        "linkclasses":{
+            "label": "Link Classes",
+            "description": "Add classes",
+            "type": "text"
+        }
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Element",
+                    "fields": [
+                        "urlselect",
+                        "altlabel",
+                        "linkstyle",
+                        "button_size",
+                        "linktarget"
+                    ]
+                },
+                {
+                    "title": "Advanced",
+                    "fields": [
+                        "containerclasses",
+                        "linkclasses"
+                    ]
+                }
+            ]
+        }
+    }
+}
